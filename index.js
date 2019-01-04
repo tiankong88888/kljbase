@@ -5,4 +5,5 @@ console.ignoredYellowBox = [
   'Warning: componentWillReceiveProps is deprecated',
   'Warning: componentWillUpdate is deprecated',
   'Warning: isMounted(...) is deprecated',
+  'Warning: jumptToIndex is deprecated',
 ]

@@ -1,6 +1,4 @@
-import React, { Component } from 'react'
-
-import { connect } from 'react-redux'
+import React from 'react'
 
 import { createStackNavigator } from 'react-navigation'
 import { Icon } from 'native-base'
@@ -18,20 +16,15 @@ const AccountNavigator = createStackNavigator(
   }
 )
 
-@connect()
-export default class AccountContainer extends Component {
-  static navigationOptions = {
-    tabBarLabel: '我的',
-    tabBarIcon: ({ tintColor }) => (
-      <Icon
-        name="home"
-        size={30}
-        style={{ color: tintColor }}
-      />
-    ),
-  }
-
-  render() {
-    return <AccountNavigator/>
-  }
+AccountNavigator.navigationOptions = {
+  tabBarLabel: '我的',
+  tabBarIcon: ({ tintColor }) => (
+    <Icon
+      name="person"
+      size={30}
+      style={{ color: tintColor }}
+    />
+  ),
 }
+
+export default AccountNavigator

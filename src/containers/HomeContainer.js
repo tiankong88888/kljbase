@@ -1,5 +1,4 @@
-import React, { Component } from 'react'
-import { connect } from 'react-redux'
+import React from 'react'
 
 import { createStackNavigator } from 'react-navigation'
 import { Icon } from 'native-base'
@@ -17,16 +16,14 @@ const HomeNavigator = createStackNavigator(
   }
 )
 
-@connect()
-export default class HomcContainer extends Component {
-  static navigationOptions = {
-    tabBarLabel: '首页',
-    tabBarIcon: ({ tintColor }) => (
-      <Icon name="home" size={30} style={{ color: tintColor }} />
-    ),
-  }
-
-  render() {
-    return <HomeNavigator />
-  }
+HomeNavigator.navigationOptions = {
+  tabBarLabel: '首页',
+  tabBarIcon: ({ tintColor }) => (
+    <Icon 
+      name="home" 
+      size={30} 
+      style={{ color: tintColor }} />
+  ),
 }
+
+export default HomeNavigator

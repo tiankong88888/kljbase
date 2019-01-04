@@ -1,16 +1,18 @@
-import React, { Component } from 'react'
-
-import { connect } from 'react-redux'
+import React  from 'react'
 
 import { createStackNavigator } from 'react-navigation'
 import { Icon } from 'native-base'
 
 import Activity from './Activity'
+import Activity2 from './Activity2'
 
 const ActivityNavigator = createStackNavigator(
   {
     ActivityHome: {
       screen: Activity,
+    },
+    Activity2: {
+      screen: Activity2,
     },
   },
   {
@@ -18,20 +20,16 @@ const ActivityNavigator = createStackNavigator(
   }
 )
 
-@connect()
-export default class ActivityContainer extends Component {
-  static navigationOptions = {
-    tabBarLabel: '活动',
-    tabBarIcon: ({ tintColor }) => (
-      <Icon
-        name="home"
-        size={30}
-        style={{ color: tintColor }}
-      />
-    ),
-  }
-
-  render() {
-    return <ActivityNavigator/>
-  }
+ActivityNavigator.navigationOptions = {
+  tabBarLabel: '活动',
+  tabBarIcon: ({ tintColor }) => (
+    <Icon
+    types="Feather"
+    name="calendar"
+      size={30}
+      style={{ color: tintColor }}
+    />
+  ),
 }
+
+export default ActivityNavigator

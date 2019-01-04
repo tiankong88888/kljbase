@@ -7,6 +7,7 @@ import {
   Body,
   Container,
   Text,
+  Button,
 } from 'native-base'
 
 import {
@@ -21,6 +22,10 @@ export default class Actvity extends Component {
     header: null,
   }
 
+  gotoActivity2 = () => {
+    this.props.navigation.navigate({ routeName: 'Activity2' })
+  }
+
   render() {
     return (
       <Container>
@@ -31,6 +36,7 @@ export default class Actvity extends Component {
         </Header>
         <View>
           <Text>Activity Body</Text>
+          <Button onPress={this.gotoActivity2}><Text>Activity2</Text></Button>
         </View>
       </Container>
     )

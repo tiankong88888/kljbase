@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { StyleSheet, View, } from 'react-native'
+import {  StyleSheet, View, } from 'react-native'
 import { connect } from 'react-redux'
 
 import {
@@ -17,26 +17,25 @@ import {
 } from '../utils'
 
 @connect(({ app }) => ({ ...app }))
-export default class Patient extends Component {
+export default class Actvity extends Component {
   static navigationOptions = {
     header: null,
   }
 
   gotoPatient2 = () => {
-    this.props.navigation.navigate({ routeName: 'Patient2' })
+    this.props.navigation.navigate({ routeName: 'Patient' })
   }
 
   render() {
-
     return (
       <Container>
         <Header>
           <Body style={styles.body}>
-            <Text style={styles.text}>Patient</Text>
+            <Text style={styles.text}>Activity2</Text>
           </Body>
         </Header>
         <View>
-          <Text>Patient Body</Text>
+          <Text>Activity Body</Text>
           <Button onPress={this.gotoPatient2}><Text>Patient2</Text></Button>
         </View>
       </Container>
@@ -54,4 +53,3 @@ const styles = StyleSheet.create({
     color: '#fff'
   },
 })
-

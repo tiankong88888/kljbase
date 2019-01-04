@@ -1,16 +1,18 @@
-import React, { Component } from 'react'
-
-import { connect } from 'react-redux'
+import React from 'react'
 
 import { createStackNavigator } from 'react-navigation'
 import { Icon } from 'native-base'
 
 import Patient from './Patient'
+import Patient2 from './Patient2'
 
 const PatientNavigator = createStackNavigator(
   {
     PatientHome: {
       screen: Patient,
+    },
+    Patient2: {
+      screen: Patient2,
     },
   },
   {
@@ -18,20 +20,16 @@ const PatientNavigator = createStackNavigator(
   }
 )
 
-@connect()
-export default class ActivityContainer extends Component {
-  static navigationOptions = {
-    tabBarLabel: '患者',
-    tabBarIcon: ({ tintColor }) => (
-      <Icon
-        name="home"
-        size={30}
-        style={{ color: tintColor }}
-      />
-    ),
-  }
-
-  render() {
-    return <PatientNavigator/>
-  }
+PatientNavigator.navigationOptions = {
+  tabBarLabel: '患者',
+  tabBarIcon: ({ tintColor }) => (
+    <Icon
+      type="MaterialIcons"
+      name="group"
+      size={30}
+      style={{ color: tintColor }}
+    />
+  ),
 }
+
+export default PatientNavigator

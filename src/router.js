@@ -134,6 +134,7 @@ class Router extends PureComponent {
 
   render() {
     const { dispatch, router } = this.props
+    console.log(router)
 
     return (
       <Root>
