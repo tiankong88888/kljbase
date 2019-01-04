@@ -19,7 +19,10 @@ import {
 @connect(({ app }) => ({ ...app }))
 export default class Patient extends Component {
   static navigationOptions = {
-    header: null,
+    title: '患者2',
+    headerStyle: {
+      backgroundColor: '#3F51B5',
+    },
   }
 
   gotoActivity2 = () => {
@@ -31,11 +34,6 @@ export default class Patient extends Component {
 
     return (
       <Container>
-        <Header>
-          <Body style={styles.body}>
-            <Text style={styles.text}>Patient2</Text>
-          </Body>
-        </Header>
         <View>
           <Text>Patient Body</Text>
           <Button onPress={this.gotoActivity2}><Text>Activity2</Text></Button>
